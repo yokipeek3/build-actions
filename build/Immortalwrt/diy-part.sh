@@ -74,6 +74,9 @@ export kernel_usage="stable"
 
 sed -i "/helloworld/d" "feeds.conf.default"
 echo "src-git helloworld https://github.com/fw876/helloworld.git;main" >> "feeds.conf.default"
+
+sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+
 # 修改插件名字
 sed -i 's/"aMule设置"/"电驴下载"/g' `egrep "aMule设置" -rl ./`
 sed -i 's/"网络存储"/"NAS"/g' `egrep "网络存储" -rl ./`
